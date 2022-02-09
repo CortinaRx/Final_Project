@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
     name: { type: String, trim: true, required: true },
     email: { type: String, trim: true, required: true, unique: true },
     password: { type: String, trim: true, required: true },
-    phone: {type: Number, trim: true, required: true},
+    phone: {type: Number, trim: true},
     allergen:[{ type: mongoose.Types.ObjectId, ref: 'allergen', default:""}],
     traces:[ {type: mongoose.Types.ObjectId, ref: 'allergen', default:""}],
     fav: [{ type: mongoose.Types.ObjectId, ref: 'Food', default:""}],

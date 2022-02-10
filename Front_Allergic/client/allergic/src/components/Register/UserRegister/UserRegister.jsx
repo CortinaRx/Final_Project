@@ -18,6 +18,7 @@ const UserRegister = ({props, props2}) => {
     props.setFinalInfo(formData)
     props2.setPage(2)
     
+    
   } 
 
 
@@ -32,6 +33,7 @@ const UserRegister = ({props, props2}) => {
       <label htmlFor="name">Name</label>
       <input
         id="name"
+        defaultValue="rick700"
         placeholder="Nombre completo"
         type="name"
         {...register("name", { required: true })}
@@ -40,6 +42,7 @@ const UserRegister = ({props, props2}) => {
       <label htmlFor="email">Email</label>
       <input
         id="email"
+        defaultValue="rick@700.com"
         placeholder="Dirección e-mail"
         type="email"
         {...register("email", {
@@ -51,6 +54,7 @@ const UserRegister = ({props, props2}) => {
     <label htmlFor="phone">Phone</label>
       <input
         id="phone"
+        defaultValue="7894561"
         placeholder="Móvil"
         type="number"
         {...register("phone", {
@@ -65,6 +69,7 @@ const UserRegister = ({props, props2}) => {
         name="password"
         id="password"
         type="password"
+        defaultValue="Cortina123*"
         placeholder="Password"
         {...register("password", {
           required: true

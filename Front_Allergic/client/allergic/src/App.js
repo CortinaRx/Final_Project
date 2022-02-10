@@ -11,6 +11,7 @@ import Register from './pages/Register/Register';
 import { useState } from 'react';
 import { JwtContext } from './shared/contexts/JwtContext';
 import LoginPage from './pages/LoginPage/LoginPage';
+import RegisterPage from './pages/RegisterPage/RegisterPage';
 
 
 
@@ -33,9 +34,12 @@ function App() {
           <Route path="/emergency" element={<Emergency />} />
           <Route path="/favorite" element={<Favorite />} />
           <Route path="/diary" element={<Diary />} />
+          <Route path="/registerpage" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />} />
+
+
 
           <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<LoginPage />} />
 
         
           

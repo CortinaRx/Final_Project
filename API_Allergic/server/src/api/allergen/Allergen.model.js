@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const AllergenSchema = new Schema({
-    name: { type: String, required: true, trim: true },
-    img: { type: String, required: true, trim: true },
+    name: { type: String, required: true, trim: true, unique: true},
+    img: { type: String,  trim: true },
     
     
 }, { timestamp: true }

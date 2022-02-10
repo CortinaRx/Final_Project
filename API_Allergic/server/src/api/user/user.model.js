@@ -15,6 +15,7 @@ const userSchema = new mongoose.Schema({
     contact: {
         sosname: { type: String, trim: true},
         sosphone: { type: Number, trim: true},
+        sosemail: {type: String, trim: true},
         assurance: {type: String, trim: true}
     
     },

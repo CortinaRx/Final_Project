@@ -1,18 +1,34 @@
-import React from "react";
-
+import React from 'react'
 import { useForm } from "react-hook-form";
-import { API } from "../../shared/services/api";
+import { API } from "../../../shared/services/api";
 
-const Register = () => {
+const UserRegister = ({props, props2}) => {
   const { register, handleSubmit } = useForm();
+  
+  // const onSubmit = (formData) => {
+  //   API.post("/api/users/register", formData).then((res) => {
+  //     console.log("Register user", res);
+  //     console.log("formData =", formData)
 
-  const onSubmit = (formData) => {
-    API.post("/api/users/register", formData).then((res) => {
-      console.log("Register user", res);
-    });
-  };
+  //   });
+
+  // };
+
+  const onSubmit = (formData) =>{
+    props.setFinalInfo(formData)
+    props2.setPage(2)
+    
+  } 
+
+
+
+  
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <div>
+
+
+<form onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="name">Name</label>
       <input
         id="name"
@@ -56,9 +72,14 @@ const Register = () => {
         })}
       />
 
-      <input type="submit" value="Register" />
+      <input type="submit" value="Guardar Perfil" />
     </form>
-  );
-};
 
-export default Register;
+        
+
+
+    </div>
+  )
+}
+
+export default UserRegister

@@ -10,6 +10,7 @@ const postNewUser = async (req, res, next) => {
         if (userDuplicate) {
             return next(setError(404, 'Email existente'))
         }
+    
         const userDB = await newUser.save()
         return res.status(201).json({ name: userDB.name, email: userDB.email, phone: userDB.phone, allergen: userDB.allergen })
 

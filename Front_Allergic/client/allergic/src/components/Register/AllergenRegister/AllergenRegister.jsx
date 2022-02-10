@@ -30,6 +30,21 @@ const AllergenRegister = ({ props, props2, props3 }) => {
 
     const allArraysAllergens = (allergens) => {
       const arrayACopy = []
+      const arrayCCopy = []
+      const arrayFCopy = []
+      const arrayGCopy = []
+      const arrayHCopy = []
+      const arrayKCopy = []
+      const arrayLCopy = []
+      const arrayMCopy = []
+      const arrayNCopy = []
+      const arrayPCopy = []
+      const arrayRCopy = []
+      const arraySCopy = []
+      const arrayTCopy = []
+      const arrayUCopy = []
+      const arrayVCopy = []
+      const arrayYCopy = []
       for (let i = 0; i < allergens.length; i++) {
         const allergen = allergens[i];
         if (allergen.name[0] === ("a" || "á")) {
@@ -40,37 +55,52 @@ const AllergenRegister = ({ props, props2, props3 }) => {
           
           console.log("arrayACopy en A", arrayACopy)
         } else if (allergen.name[0] === "c") {
-          setArrayC(allergen)
+          arrayCCopy.push(allergen)
         } else if (allergen.name[0] === "f") {
-          setArrayF(allergen)
+          arrayFCopy.push(allergen)
         } else if (allergen.name[0] === "g") {
-          setArrayG(allergen)
+          arrayGCopy.push(allergen)
         } else if (allergen.name[0] === "h") {
-          setArrayH(allergen)
+          arrayHCopy.push(allergen)
         } else if (allergen.name[0] === "k") {
-          setArrayK(allergen)
+          arrayKCopy.push(allergen)
         } else if (allergen.name[0] === "l") {
-          setArrayL(allergen)
+          arrayLCopy.push(allergen)
         } else if (allergen.name[0] === "m") {
-          setArrayM(allergen)
+          arrayMCopy.push(allergen)
         } else if (allergen.name[0] === "n") {
-          setArrayN(allergen)
+          arrayNCopy.push(allergen)
         } else if (allergen.name[0] === "p") {
-          setArrayP(allergen)
+          arrayPCopy.push(allergen)
         } else if (allergen.name[0] === "r") {
-          setArrayR(allergen)
+          arrayRCopy.push(allergen)
         } else if (allergen.name[0] === "s") {
-          setArrayS(allergen)
+          arraySCopy.push(allergen)
         } else if (allergen.name[0] === "t") {
-          setArrayT(allergen)
+          arrayTCopy.push(allergen)
         } else if (allergen.name[0] === ("u" || "ú")) {
-          setArrayU(allergen)
+          arrayUCopy.push(allergen)
         } else if (allergen.name[0] === "v") {
-          setArrayV(allergen)
+          arrayVCopy.push(allergen)
         } else if (allergen.name[0] === "y") {
-          setArrayY(allergen)
+          arrayYCopy.push(allergen)
         }
       }setArrayA(arrayACopy)
+       setArrayC(arrayCCopy)
+       setArrayF(arrayFCopy)
+       setArrayG(arrayGCopy)
+       setArrayH(arrayHCopy)
+       setArrayK(arrayKCopy)
+       setArrayL(arrayLCopy)
+       setArrayM(arrayMCopy)
+       setArrayN(arrayNCopy)
+       setArrayP(arrayPCopy)
+       setArrayR(arrayRCopy)
+       setArrayS(arraySCopy)
+       setArrayT(arrayTCopy)
+       setArrayU(arrayUCopy)
+       setArrayV(arrayVCopy)
+       setArrayY(arrayYCopy)
   
       
     }

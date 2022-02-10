@@ -3,108 +3,136 @@ import { API } from "../../../shared/services/api";
 import AlphabeticalMap from "./AlphabeticalMap/AlphabeticalMap";
 
 const AllergenRegister = ({ props, props2, props3 }) => {
-  console.log(
-    "estas son las props de contact ",
-    props.finalInfo,
-    "esto seria la pagina:",
-    props2.page
-  );
-
+  // console.log(
+  //   "estas son las props de contact ",
+  //   props.finalInfo,
+  //   "esto seria la pagina:",
+  //   props2.page
+  // );
   const [allergens, setAllergens] = useState([]);
+    const [arrayA, setArrayA] = useState([]);
+    const [arrayC, setArrayC] = useState([])
+    const [arrayF, setArrayF] = useState([])
+    const [arrayG, setArrayG] = useState([])
+    const [arrayH, setArrayH] = useState([])
+    const [arrayK, setArrayK] = useState([])
+    const [arrayL, setArrayL] = useState([])
+    const [arrayM, setArrayM] = useState([])
+    const [arrayN, setArrayN] = useState([])
+    const [arrayP, setArrayP] = useState([])
+    const [arrayR, setArrayR] = useState([])
+    const [arrayS, setArrayS] = useState([])
+    const [arrayT, setArrayT] = useState([])
+    const [arrayU, setArrayU] = useState([])
+    const [arrayV, setArrayV] = useState([])
+    const [arrayY, setArrayY] = useState([])
 
-  const arrayA = ["hola"];
-  const arrayC = [];
-  const arrayF = [];
-  const arrayG = [];
-  const arrayH = [];
-  const arrayK = [];
-  const arrayL = [];
-  const arrayM = [];
-  const arrayN = [];
-  const arrayP = [];
-  const arrayR = [];
-  const arrayS = [];
-  const arrayT = [];
-  const arrayU = [];
-  const arrayV = [];
-  const arrayY = [];
 
-  const allArraysAllergens = (allergens) => {
-    for (let i = 0; i < allergens.length; i++) {
-      const allergen = allergens[i];
-      if (allergen.name[0] === ("a" || "á")) {
-        arrayA.push(allergen);
-      } else if (allergen.name[0] === "c") {
-        arrayC.push(allergen);
-      } else if (allergen.name[0] === "f") {
-        arrayF.push(allergen);
-      } else if (allergen.name[0] === "g") {
-        arrayG.push(allergen);
-      } else if (allergen.name[0] === "h") {
-        arrayH.push(allergen);
-      } else if (allergen.name[0] === "k") {
-        arrayK.push(allergen);
-      } else if (allergen.name[0] === "l") {
-        arrayL.push(allergen);
-      } else if (allergen.name[0] === "m") {
-        arrayM.push(allergen);
-      } else if (allergen.name[0] === "n") {
-        arrayN.push(allergen);
-      } else if (allergen.name[0] === "p") {
-        arrayP.push(allergen);
-      } else if (allergen.name[0] === "r") {
-        arrayR.push(allergen);
-      } else if (allergen.name[0] === "s") {
-        arrayS.push(allergen);
-      } else if (allergen.name[0] === "t") {
-        arrayT.push(allergen);
-      } else if (allergen.name[0] === ("u" || "ú")) {
-        arrayU.push(allergen);
-      } else if (allergen.name[0] === "v") {
-        arrayV.push(allergen);
-      } else if (allergen.name[0] === "y") {
-        arrayY.push(allergen);
-      }
-    }console.log("sergioaqui", arrayA)
+    const allArraysAllergens = (allergens) => {
+      const arrayACopy = []
+      for (let i = 0; i < allergens.length; i++) {
+        const allergen = allergens[i];
+        if (allergen.name[0] === ("a" || "á")) {
+          console.log(allergen)
+          
+          arrayACopy.push(allergen)
 
-    
-  };
+          
+          console.log("arrayACopy en A", arrayACopy)
+        } else if (allergen.name[0] === "c") {
+          setArrayC(allergen)
+        } else if (allergen.name[0] === "f") {
+          setArrayF(allergen)
+        } else if (allergen.name[0] === "g") {
+          setArrayG(allergen)
+        } else if (allergen.name[0] === "h") {
+          setArrayH(allergen)
+        } else if (allergen.name[0] === "k") {
+          setArrayK(allergen)
+        } else if (allergen.name[0] === "l") {
+          setArrayL(allergen)
+        } else if (allergen.name[0] === "m") {
+          setArrayM(allergen)
+        } else if (allergen.name[0] === "n") {
+          setArrayN(allergen)
+        } else if (allergen.name[0] === "p") {
+          setArrayP(allergen)
+        } else if (allergen.name[0] === "r") {
+          setArrayR(allergen)
+        } else if (allergen.name[0] === "s") {
+          setArrayS(allergen)
+        } else if (allergen.name[0] === "t") {
+          setArrayT(allergen)
+        } else if (allergen.name[0] === ("u" || "ú")) {
+          setArrayU(allergen)
+        } else if (allergen.name[0] === "v") {
+          setArrayV(allergen)
+        } else if (allergen.name[0] === "y") {
+          setArrayY(allergen)
+        }
+      }setArrayA(arrayACopy)
+  
+      
+    }
 
+
+
+
+
+
+
+
+
+ 
 
 
   
   
   useEffect(() => {
-    console.log("pepeeeeee")
+    
     API.get("/api/allergen").then((res) => {
       const allergenslocal = res.data;
-      console.log("sergio22222", res.data)
-      // allergenslocal.sort((a, b) => {
-      //   if (a.name > b.name) {
-      //     return 1;
-      //   }
-      //   if (a.name < b.name) {
-      //     return -1;
-      //   }
-      //   // a must be equal to b
-      //   return 0;
+      
+      allergenslocal.sort((a, b) => {
+        if (a.name > b.name) {
+          return 1;
+        }
+        if (a.name < b.name) {
+          return -1;
+        }
+        // a must be equal to b
+        return 0;
 
-      // });
-      console.log("sergiooooo", allergenslocal)
-      // allArraysAllergens(allergenslocal);
-      setAllergens(allergens);
+        
+
+    
+
+      }); 
+      setAllergens(allergenslocal);
+      allArraysAllergens(allergenslocal)
+
+
+      
+      
+      
       
       
     });
   }, []);
 
 
+  // allergens.map()
+
+
+
+
+// console.log("console log de allergens ", allergens);
 
   return (
     <div>
-      {/* {arrayA.map((array)=>{return <p>{array[0].name}</p>})} */}
-      <p>{arrayA}</p>
-      {console.log("holaaaaaaa", arrayA)}
+      
+    
+      {/* {console.log("holaaaaaaa arrayA", arrayA)} */}
       {/* {allergens !== undefined ? <div>
       <AlphabeticalMap allergens={arrayA} />
       <AlphabeticalMap allergens={arrayC} />

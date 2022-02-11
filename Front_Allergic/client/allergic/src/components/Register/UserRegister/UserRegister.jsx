@@ -33,7 +33,7 @@ const UserRegister = ({props, props2}) => {
       <label htmlFor="name">Name</label>
       <input
         id="name"
-        defaultValue="rick700"
+        defaultValue="antonio"
         placeholder="Nombre completo"
         type="name"
         {...register("name", { required: true })}
@@ -42,7 +42,7 @@ const UserRegister = ({props, props2}) => {
       <label htmlFor="email">Email</label>
       <input
         id="email"
-        defaultValue="rick@700.com"
+        defaultValue="antonio@gmail.com"
         placeholder="Dirección e-mail"
         type="email"
         {...register("email", {
@@ -54,7 +54,7 @@ const UserRegister = ({props, props2}) => {
     <label htmlFor="phone">Phone</label>
       <input
         id="phone"
-        defaultValue="7894561"
+        defaultValue="666666666"
         placeholder="Móvil"
         type="number"
         {...register("phone", {

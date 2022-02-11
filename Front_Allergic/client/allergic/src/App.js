@@ -7,7 +7,6 @@ import RestMap from './pages/RestMap/RestMap';
 import Emergency from './pages/Emergency/Emergency';
 import Favorite from './pages/Favorite/Favorite';
 import Diary from './pages/Diary/Diary';
-import Register from './pages/Register/Register';
 import { useState } from 'react';
 import { JwtContext } from './shared/contexts/JwtContext';
 import LoginPage from './pages/LoginPage/LoginPage';
@@ -39,7 +38,7 @@ function App() {
 
 
 
-          {/* <Route path="/register" element={<Register />} /> */}
+        
 
         
           

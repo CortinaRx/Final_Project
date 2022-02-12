@@ -1,4 +1,5 @@
 import React from "react";
+import './AlphabeticalMap.scss'
 
 const AlphabeticalMap = ({ allergens, letter, register }) => {
   return (
@@ -6,6 +7,7 @@ const AlphabeticalMap = ({ allergens, letter, register }) => {
       <h1>{letter}</h1>
 
       <div>
+      
         {allergens.map((allergen) => (
           <div key={allergen._id}>
             {allergen.name[0].toUpperCase() === letter && (

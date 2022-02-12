@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { API } from '../../../shared/services/api'
+import './SubmitUserRegister.scss'
 
 const SubmitUserRegister = ({ props, props2 }) => {
 
@@ -97,13 +99,27 @@ const SubmitUserRegister = ({ props, props2 }) => {
 
   
   return (
-    <div>
+
+    <div className='submit-register-container'>
+    <div className='submit-register-container--page'>
+    <Link to="/"><img src="./Images/registerCrossImage.png" alt="Cross Icon"/></Link>
+    </div>
+    <div className='submit-register-container--text'>
+      <h1>Confirma tu selección.</h1>
+      <p>A continuación te resumimos los alimentos registrados como peligrosos para ti.</p>
+      
+    </div>
     
+    <div className='submit-register-container--allergens'>
+    <p>Marca para deseleccionar o añadir uno nuevo.</p>
     {allergensFinded.map((allergenFinded)=>(
         <div key={allergenFinded._id}>
+        <input type="checkbox" value={allergenFinded.name} defaultChecked={true}/>
           {allergenFinded.name}
         </div>
     ))}
+    <button onClick={()=>props2.setPage(3)}>Añadir nuevos</button>
+    </div>
 
     <button onClick={()=>onSubmit()}>Confirmar</button>
     

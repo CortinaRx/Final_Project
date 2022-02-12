@@ -1,0 +1,55 @@
+.submit-register-container{
+    &--page{
+        display:flex;
+        flex-direction:row;
+        justify-content:end;
+        margin:3vh 4vw 1vh 4vw;
+
+        img{
+            width:4.5vw;
+        }
+        
+    }
+    &--text{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        text-align:center;
+        align-items:center;
+       
+
+        h1{
+            font-weight:600;
+            font-size:1.5rem;
+            margin:1vh 0 1vh 0;
+            padding:0 5vw 0 5vw;
+        }
+
+        p{
+            font-weight:400;
+            font-size:1rem;
+            margin:1vw 0 1vw 0;
+            padding:0 12vw 0 12vw;
+            color:#8e9296;
+        }
+
+    }
+    &--allergens{
+        p{
+
+        }
+        input{
+
+        }
+
+        &--back{
+
+        }
+
+        &--confirm{
+            
+        }
+         
+       
+    }
+}

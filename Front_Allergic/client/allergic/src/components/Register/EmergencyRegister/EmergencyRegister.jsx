@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
+import './EmergencyRegister.scss'
 
 const EmergencyRegister = ({props, props2}) => {
 console.log("Esto esta llegando a emergency register como finalInfo:", props.finalInfo)
@@ -10,10 +11,11 @@ const onSubmit = (formData) =>{
 //  setContact(formData)
   props.setFinalInfo({...props.finalInfo, contact:formData} )
   // props.setFinalInfo(props.finalInfo, contact)
-  props2.setPage(3)
-
-
+  setTimeout(()=>{
+    props2.setPage(3)
+  },300)
   
+
 } 
 
 
@@ -21,18 +23,26 @@ const onSubmit = (formData) =>{
 
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-    <label htmlFor="name">Name</label>
-    <input
+    <div className='emergency-register-container'>
+    <div className='emergency-register-container--page'>
+      <a onClick={()=>props2.setPage(1)}><img src="./Images/returnBackImage.png" alt="Back Icon"/>Volver</a>
+      <p>{props2.page} de 4</p>
+    </div>
+    <div className='emergency-register-container--text'>
+      <h1>Vamos a añadir tu contacto en caso de emergencía.</h1>
+      <p>Nos pondremos en contacto con tu persona de confianza y/o compañía de seguros en caso de emergencía</p>
+      
+    </div>
+    <form className='emergency-register-container--form' onSubmit={handleSubmit(onSubmit)}>
+
+    <input className='emergency-register-container--form--input'
       id="sosname"
       defaultValue="rick"
       placeholder="Nombre completo de tu contacto"
       type="text"
       {...register("sosname", { required: false })}
     />
-
-    <label htmlFor="email">Email</label>
-    <input
+    <input className='emergency-register-container--form--input'
       id="sosemail"
       defaultValue="rick@rick.com"
       placeholder="Dirección e-mail"
@@ -43,8 +53,7 @@ const onSubmit = (formData) =>{
       })}
     />
 
-  <label htmlFor="phone">Phone</label>
-    <input
+    <input className='emergency-register-container--form--input'
       id="sosphone"
       defaultValue="1234567"
       placeholder="Móvil"
@@ -56,8 +65,7 @@ const onSubmit = (formData) =>{
     />
 
 
-    <label htmlFor="assurance">Assurance</label>
-    <input
+    <input className='emergency-register-container--form--input'
       name="Assurance"
       defaultValue="segurooooo"
       id="assurance"
@@ -69,8 +77,10 @@ const onSubmit = (formData) =>{
       })}
     />
 
-    <input type="submit" value="Guardar emergencias" />
+    <input className='emergency-register-container--form--button'  type="submit" value="Guardar emergencias" />
+    <a>Registraré mi contacto en otro momento</a>
   </form>
+  </div>
   )
 }
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { API } from "../../../shared/services/api";
 import AlphabeticalMap from "./AlphabeticalMap/AlphabeticalMap";
+import './AllergenRegister.scss'
 
 const AllergenRegister = ({ props, props2}) => {
  

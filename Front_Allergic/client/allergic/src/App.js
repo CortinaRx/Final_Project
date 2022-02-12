@@ -27,14 +27,14 @@ function App() {
     <div>
     <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/scanner" element={<Scanner />} />
           <Route path="/restaurant-map" element={<RestMap />} />
           <Route path="/emergency" element={<Emergency />} />
           <Route path="/favorite" element={<Favorite />} />
           <Route path="/diary" element={<Diary />} />
           <Route path="/registerpage" element={<RegisterPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<LoginPage />} />
 
 
 

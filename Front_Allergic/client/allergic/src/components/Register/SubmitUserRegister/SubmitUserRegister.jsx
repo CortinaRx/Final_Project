@@ -108,7 +108,7 @@ const SubmitUserRegister = ({ props, props2 }) => {
               defaultChecked={true}
               id={allergenFinded.name}
             />
-            <label for={allergenFinded.name}> {allergenFinded.name}</label>
+            <label htmlFor={allergenFinded.name}> {allergenFinded.name}</label>
           </div>
         ))}
       </div>

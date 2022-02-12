@@ -25,7 +25,7 @@ const onSubmit = (formData) =>{
   return (
     <div className='emergency-register-container'>
     <div className='emergency-register-container--page'>
-      <a onClick={()=>props2.setPage(1)}><img src="./Images/returnBackImage.png" alt="Back Icon"/>Volver</a>
+      <h4 onClick={()=>props2.setPage(1)}><img src="./Images/returnBackImage.png" alt="Back Icon"/>Volver</h4>
       <p>{props2.page} de 4</p>
     </div>
     <div className='emergency-register-container--text'>
@@ -78,7 +78,7 @@ const onSubmit = (formData) =>{
     />
 
     <input className='emergency-register-container--form--button'  type="submit" value="Guardar emergencias" />
-    <a>Registraré mi contacto en otro momento</a>
+    <h5>Registraré mi contacto en otro momento</h5>
   </form>
   </div>
   )

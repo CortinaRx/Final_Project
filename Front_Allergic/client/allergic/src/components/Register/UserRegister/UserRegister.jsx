@@ -42,7 +42,7 @@ const UserRegister = ({ props, props2 }) => {
 
         <input className='user-register-container--form--input'
           id="name"
-          defaultValue="antonio"
+          defaultValue="Recardo"
           placeholder="Nombre completo"
           type="name"
           {...register("name", { required: true })}
@@ -50,7 +50,7 @@ const UserRegister = ({ props, props2 }) => {
 
         <input className='user-register-container--form--input'
           id="email"
-          defaultValue="antonio@gmail.com"
+          defaultValue="ricardo@gmail.com"
           placeholder="Dirección e-mail"
           type="email"
           {...register("email", {

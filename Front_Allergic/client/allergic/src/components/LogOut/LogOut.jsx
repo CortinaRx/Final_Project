@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { JwtContext } from "../../shared/contexts/JwtContext";
+import './LogOut.scss'
 
 
 export default function LogOut () {
@@ -12,20 +13,14 @@ export default function LogOut () {
     const signOut = () => {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
+        localStorage.removeItem('id');
         setJwt(null);
-        navigate("/login");
+        navigate("/");
     }
 
-    return jwt ? (
-        <p>
-            Welcome! {user}
-            <button
-                onClick={signOut}
-            >
-                Sign out
-            </button>
-        </p>
-    ) : (
-        <p>You are not logged in.</p>
-    );
+    return (
+        <div className="logout-container" onClick={signOut}>
+        <img className="menu-items--li--img1" src="./Images/HamburguerMenuLogOut.png" alt=""/><p>Salir</p>
+        </div>
+    )
 }

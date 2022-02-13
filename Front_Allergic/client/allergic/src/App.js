@@ -9,8 +9,12 @@ import Favorite from './pages/Favorite/Favorite';
 import Diary from './pages/Diary/Diary';
 import { useState } from 'react';
 import { JwtContext } from './shared/contexts/JwtContext';
+import { IsAllergicContext } from './shared/contexts/IsAllergicContext';
 import LoginPage from './pages/LoginPage/LoginPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
+import RequireAuth from './shared/components/RequireAuth';
+import LoginAuth from './shared/components/LoginAuth';
+import ResultScanner from './pages/ResultScanner/ResultScanner';
 
 
 
@@ -22,35 +26,22 @@ import RegisterPage from './pages/RegisterPage/RegisterPage';
 
 function App() {
   const [jwt, setJwt] = useState(localStorage.getItem('token') || null);
+  const [isAllergic, setIsAllergic]=useState(0)
   return (
     <JwtContext.Provider value={{ jwt, setJwt }}>
+    <IsAllergicContext.Provider value={{ isAllergic, setIsAllergic }}>
     <div>
     <Router>
         <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/scanner" element={<Scanner />} />
-          <Route path="/restaurant-map" element={<RestMap />} />
-          <Route path="/emergency" element={<Emergency />} />
-          <Route path="/favorite" element={<Favorite />} />
-          <Route path="/diary" element={<Diary />} />
+          <Route path="/home" element={<RequireAuth><Home /></RequireAuth>} />
+          <Route path="/scanner" element={<RequireAuth><Scanner /></RequireAuth>} />
+          <Route path="/resultscanner" element={<RequireAuth><ResultScanner /></RequireAuth>} />
+          <Route path="/restaurant-map" element={<RequireAuth><RestMap /></RequireAuth>} />
+          <Route path="/emergency" element={<RequireAuth><Emergency /></RequireAuth>} />
+          <Route path="/favorite" element={<RequireAuth><Favorite /></RequireAuth>} />
+          <Route path="/diary" element={<RequireAuth><Diary /></RequireAuth>} />
           <Route path="/registerpage" element={<RegisterPage />} />
-          <Route path="/" element={<LoginPage />} />
-
-
-
-        
-
-        
-          
-
-          
-         
-
-         
-
-
-          {/* <Route path="/login" element={<LoginPage />} /> */}
-
+          <Route path="/" element={<LoginAuth><LoginPage /></LoginAuth>} />
 
 
      
@@ -59,6 +50,7 @@ function App() {
      </Router>
       
     </div>
+    </IsAllergicContext.Provider>
     </JwtContext.Provider>
   );
 }

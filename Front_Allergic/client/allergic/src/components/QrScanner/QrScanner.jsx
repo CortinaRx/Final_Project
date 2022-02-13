@@ -8,7 +8,7 @@ const previewStyle = {
     
 }
 
-const QrScanner = () => {
+const QrScanner = ({props}) => {
 
     const successScan = (data) => {
         if (data) {

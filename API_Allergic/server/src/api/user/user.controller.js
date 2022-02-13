@@ -51,8 +51,9 @@ const loginUser = async (req, res, next) => {
             const token = generateSign(userDB._id, userDB.email)
             const email = userDB.email
             const user = userDB.name
+            const id=userDB._id
             
-            return res.status(200).json({token, user, email})
+            return res.status(200).json({token, user, email,id})
         }
     } catch (error) {
         error.message = 'error Login'
@@ -80,7 +81,10 @@ const getUser = async (req, res, next) => {
         if (!userDB) {
             return next(setError(404, 'User not found'))
         }
-        return res.status(200).json({ name: userDB.name, email: userDB.email })
+        return res.status(200).json({ name: userDB.name, email: userDB.email ,
+             phone: userDB.phone, allergen: userDB.allergen, traces: userDB.traces, 
+              fav: userDB.fav, contact:userDB.contact, //daylist=userDB.daylist,
+        })
 
     } catch (error) {
         return next(setError(404, 'User server fail'))

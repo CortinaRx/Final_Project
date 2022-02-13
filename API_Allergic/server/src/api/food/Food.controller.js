@@ -6,10 +6,17 @@ const postNewFood = async (req, res, next) => {
     try {
         const newFood = new Food()
         newFood.name = req.body.name
-        newFood.allergens = req.body.allergens
+        newFood.barcode = req.body.barcode
+        newFood.qr = req.body.qr
+        newFood.allergen = req.body.allergen
+        newFood.traces = req.body.traces
+        newFood.ingredients = req.body.ingredients
+        
         if (req.file) {
             newFood.img = req.file.path
         }
+        
+        
         const foodDB = await newFood.save()
         return res.status(201).json(foodDB)
     } catch (error) {

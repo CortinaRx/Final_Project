@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './HamburguerMenu.scss'
+import LogOut from '../LogOut/LogOut'
 //pendiente de revisar;
 const HamburguerMenu = () => {
 
@@ -22,7 +23,7 @@ const HamburguerMenu = () => {
               <li className="menu-items--li"><img className="menu-items--li--img" src="./Images/navBarIconShared.png" alt=""/><Link to="/shared">Compartir</Link></li>
               <li className="menu-items--li"><img className="menu-items--li--img1" src="./Images/HamburguerMenuTranslate.png" alt=""/><Link to="/translator">Traductor</Link></li>
               <li className="menu-items--li"><img className="menu-items--li--img1" src="./Images/HamburguerMenuTerms.png" alt=""/><Link to="/terms">Terminos</Link></li>
-              <li className="menu-items--li"><img className="menu-items--li--img1" src="./Images/HamburguerMenuLogOut.png" alt=""/><Link to="/logout">Salir</Link> </li>
+              <li className="menu-items--li"><LogOut/> </li>
           </ul>
       </div>
   

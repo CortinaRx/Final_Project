@@ -7,6 +7,8 @@ import { API } from '../../shared/services/api';
 const Emergency = () => {
 
   const [DataGET, SetDataGET]= useState([])
+  
+  
 
   useEffect(() => {
    API.get("api/users/"+JSON.parse(localStorage.getItem("id"))).then((res) => {
@@ -34,10 +36,10 @@ const Emergency = () => {
               <span>Dirección e-mail: </span>
               {DataGET.sosemail}
             </p>
-            {/* <p>
+             <p>
               <span>Móvil: </span>
               {DataGET.sosphone}
-            </p> */}
+            </p> 
             <p>
               <span>Compañia de Seguros / Nº Póliza: </span>
               {DataGET.assurance}

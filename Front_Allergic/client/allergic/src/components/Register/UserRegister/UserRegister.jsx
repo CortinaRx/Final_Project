@@ -1,6 +1,5 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { API } from "../../../shared/services/api";
 import "./UserRegister.scss";
 import {Link} from 'react-router-dom'
 

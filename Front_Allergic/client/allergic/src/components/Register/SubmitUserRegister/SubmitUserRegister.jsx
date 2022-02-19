@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
 import { API } from "../../../shared/services/api";
 import "./SubmitUserRegister.scss";
 
 const SubmitUserRegister = ({ props, props2 }) => {
   console.log(props.finalInfo);
   const [allergensGET, setAllergensGET] = useState([]);
+  const allergensFinded = [];
+
+  const navigate = useNavigate();
+ 
 
   let finalInfoRegister = {
     name: "",
@@ -27,7 +31,7 @@ const SubmitUserRegister = ({ props, props2 }) => {
     });
   }, []);
 
-  const allergensFinded = [];
+  
 
   //En este componente se realiza una petición a la API para traer el array de alergenos
   //de forma que ya el usuario ha seleccionado previamente sus alergías y las hemos
@@ -43,7 +47,7 @@ const SubmitUserRegister = ({ props, props2 }) => {
 
   if (
     allergensGET.length > 0 &&
-    props.finalInfo.allergenObject.allergens != false
+    props.finalInfo.allergenObject.allergens !== false
   ) {
     for (let i = 0; i < props.finalInfo.allergenObject.allergens.length; i++) {
       let allergenElected = props.finalInfo.allergenObject.allergens[i];
@@ -64,9 +68,9 @@ const SubmitUserRegister = ({ props, props2 }) => {
   finalInfoRegister.password = props.finalInfo.password;
   finalInfoRegister.contact.sosname = props.finalInfo.contact.sosname;
   finalInfoRegister.contact.sosemail = props.finalInfo.contact.sosemail;
-  finalInfoRegister.contact.sospassword = props.finalInfo.contact.sospassword;
+  finalInfoRegister.contact.sosphone = props.finalInfo.contact.sosphone;
   finalInfoRegister.contact.assurance = props.finalInfo.contact.assurance;
-  if (props.finalInfo.allergenObject.allergens != false) {
+  if (props.finalInfo.allergenObject.allergens !== false) {
     finalInfoRegister = { ...finalInfoRegister, allergen: allergensFinded };
   }
 
@@ -76,6 +80,7 @@ const SubmitUserRegister = ({ props, props2 }) => {
     API.post("api/users/register", finalInfoRegister).then((res) => {
       console.log("Register user", res);
     });
+    navigate("/")
   };
 
   return (
@@ -119,7 +124,7 @@ const SubmitUserRegister = ({ props, props2 }) => {
         >
           Añadir nuevos
         </button>
-        <button
+        <button        
           className="submit-register-container--button--submit"
           onClick={() => onSubmit()}
         >

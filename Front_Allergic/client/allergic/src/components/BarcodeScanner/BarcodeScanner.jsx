@@ -33,6 +33,7 @@ export function BarcodeScanner ({foodGET, userAllergies}) {
             Quagga.start();
         });
         Quagga.onDetected((code) => {console.log(code)
+            console.log("ricardo")
             
             // console.log('AQUI ESTAN TODOS', foodGET)
             // console.log('ALERGIAS', userAllergies)
@@ -49,6 +50,7 @@ export function BarcodeScanner ({foodGET, userAllergies}) {
                             if(userAllergies.includes(allergen._id)){                           //Este IF compara las alergias del usuario con los alergenos de la comida
                                 console.log('Bro, eres alergico')
                                 setIsAllergic(isAllergic+1)
+                                break
                             }else{
                                 console.log('no eres alergico')
                             }
@@ -59,6 +61,7 @@ export function BarcodeScanner ({foodGET, userAllergies}) {
                             if(userAllergies.includes(trace._id)){                              //Este IF compara las alergias del usuario con las trazas de la comida
                                 console.log('Bro, eres tracetico')
                                 setIsAllergic(isAllergic+1)
+                                break
                             }else{
                                 console.log('no eres tracetico')
                             }
@@ -71,8 +74,11 @@ export function BarcodeScanner ({foodGET, userAllergies}) {
             }
 
             
+         
+            
             setBandera(true);
-            console.log('bandera1', bandera)
+
+            
         }
         
         
@@ -80,10 +86,11 @@ export function BarcodeScanner ({foodGET, userAllergies}) {
         
         
     }
-    useEffect(initBarcode, [])
+    useEffect(initBarcode, [foodGET, isAllergic, setIsAllergic, userAllergies])
 
-    console.log('bandera2',bandera)
-    if(bandera==true){
+
+    console.log('bandera2', bandera)
+    if(bandera ===true){
             navigate("/resultscanner")
     }
 
@@ -104,6 +111,8 @@ export function BarcodeScanner ({foodGET, userAllergies}) {
 
     
     </div>
+
+    {bandera === true ? navigate("/resultscanner") : null}
 
 
 

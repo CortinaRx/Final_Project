@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
+import { Link } from "react-router-dom";
 import './EmergencyRegister.scss'
 
 const EmergencyRegister = ({props, props2}) => {
@@ -58,8 +58,8 @@ const onSubmit = (formData) =>{
       defaultValue="1234567"
       placeholder="Móvil"
       type="number"
-      {...register("sosphone", {
-        // required: true
+      {...register("sosphone",  {
+        required: false
         
       })}
     />
@@ -78,7 +78,7 @@ const onSubmit = (formData) =>{
     />
 
     <input className='emergency-register-container--form--button'  type="submit" value="Guardar emergencias" />
-    <h5>Registraré mi contacto en otro momento</h5>
+    <span className="contact__footer"> <Link to="/login">Me registraré en otro momento</Link> </span>
   </form>
   </div>
   )

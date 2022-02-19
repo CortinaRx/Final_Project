@@ -15,7 +15,7 @@ const SubmitUserRegister = ({ props, props2 }) => {
     contact: {
       sosname: "",
       sosemail: "",
-      sospassword: "",
+      sosphone: "",
       assurance: "",
     },
     //  allergen=[]

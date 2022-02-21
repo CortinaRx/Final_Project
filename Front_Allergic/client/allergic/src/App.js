@@ -10,6 +10,7 @@ import Diary from './pages/Diary/Diary';
 import { useState } from 'react';
 import { JwtContext } from './shared/contexts/JwtContext';
 import { IsAllergicContext } from './shared/contexts/IsAllergicContext';
+import { ProductContext } from './shared/contexts/ProductContext';
 import LoginPage from './pages/LoginPage/LoginPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import RequireAuth from './shared/components/RequireAuth';
@@ -26,10 +27,12 @@ import ResultScanner from './pages/ResultScanner/ResultScanner';
 
 function App() {
   const [jwt, setJwt] = useState(localStorage.getItem('token') || null);
-  const [isAllergic, setIsAllergic]=useState(0)
+  const [isAllergic, setIsAllergic]=useState(0);
+  const [product, setProduct]=useState({});
   return (
     <JwtContext.Provider value={{ jwt, setJwt }}>
     <IsAllergicContext.Provider value={{ isAllergic, setIsAllergic }}>
+    <ProductContext.Provider value={{ product, setProduct }}>
     <div>
     <Router>
         <Routes>
@@ -50,6 +53,7 @@ function App() {
      </Router>
       
     </div>
+    </ProductContext.Provider>
     </IsAllergicContext.Provider>
     </JwtContext.Provider>
   );

@@ -12,35 +12,35 @@ const Scanner = () => {
 
   const [barcode, setBarcode] = useState(true)
 
-  useEffect(() => {
-    API.get("api/food").then((res) => {
-      console.log(res.data);
-      setFoodGET(res.data);
-    });
+  // useEffect(() => {
+  //   API.get("api/food").then((res) => {
+  //     console.log(res.data);
+  //     setFoodGET(res.data);
+  //   });
 
-    API.get("api/users/"+JSON.parse(localStorage.getItem("id"))).then((res) => {
-      console.log(JSON.parse(localStorage.getItem("id")));
-      console.log(res.data.allergen);
-      if(res.data.allergen.length>0){
-        setUserAllergies(res.data.allergen);
-      }else{
-        setBanderaUserAllergies(false)
-      }
+  //   API.get("api/users/"+JSON.parse(localStorage.getItem("id"))).then((res) => {
+  //     console.log(JSON.parse(localStorage.getItem("id")));
+  //     console.log(res.data.allergen);
+  //     if(res.data.allergen.length>0){
+  //       setUserAllergies(res.data.allergen);
+  //     }else{
+  //       setBanderaUserAllergies(false)
+  //     }
       
   
-    });
+  //   });
 
-  }, []);
+  // }, []);
 
 
 
 
   return <div className="scanner-container">
 
-    {foodGET.length>0 && <div>foodGET entra</div>}
+    {/* {foodGET.length>0 && <div>foodGET entra</div>} */}
 
     {/* {foodGET.length>0 && (barcode === true ? <BarcodeScanner props={foodGET,setFoodGET}/> : <QrScanner props={foodGET,setFoodGET}/>)} */}
-    {(barcode === true && foodGET.length > 0 && (userAllergies.length>0 || banderaUserAllergies===false)) ? <BarcodeScanner foodGET={foodGET} userAllergies={userAllergies}/>
+    {(barcode === true  /*&& foodGET.length > 0 && (userAllergies.length>0 || banderaUserAllergies===false)*/) ? <BarcodeScanner /*foodGET={foodGET} userAllergies={userAllergies}*//>
      : <QrScanner foodGET={foodGET} userAllergies={userAllergies}/>}
     
 

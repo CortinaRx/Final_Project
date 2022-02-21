@@ -15,7 +15,7 @@ const SubmitUserRegister = ({ props, props2 }) => {
     contact: {
       sosname: "",
       sosemail: "",
-      sospassword: "",
+      sosphone: "",
       assurance: "",
     },
     //  allergen=[]
@@ -64,7 +64,7 @@ const SubmitUserRegister = ({ props, props2 }) => {
   finalInfoRegister.password = props.finalInfo.password;
   finalInfoRegister.contact.sosname = props.finalInfo.contact.sosname;
   finalInfoRegister.contact.sosemail = props.finalInfo.contact.sosemail;
-  finalInfoRegister.contact.sospassword = props.finalInfo.contact.sospassword;
+  finalInfoRegister.contact.sosphone = props.finalInfo.contact.sosphone;
   finalInfoRegister.contact.assurance = props.finalInfo.contact.assurance;
   if (props.finalInfo.allergenObject.allergens != false) {
     finalInfoRegister = { ...finalInfoRegister, allergen: allergensFinded };

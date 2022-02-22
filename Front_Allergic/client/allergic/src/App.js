@@ -7,6 +7,7 @@ import RestMap from './pages/RestMap/RestMap';
 import Emergency from './pages/Emergency/Emergency';
 import Favorite from './pages/Favorite/Favorite';
 import Diary from './pages/Diary/Diary';
+import Profile from './pages/Profile/Profile';
 import { useState } from 'react';
 import { JwtContext } from './shared/contexts/JwtContext';
 import { IsAllergicContext } from './shared/contexts/IsAllergicContext';
@@ -43,6 +44,7 @@ function App() {
           <Route path="/emergency" element={<RequireAuth><Emergency /></RequireAuth>} />
           <Route path="/favorite" element={<RequireAuth><Favorite /></RequireAuth>} />
           <Route path="/diary" element={<RequireAuth><Diary /></RequireAuth>} />
+          <Route path="/profile" element={<RequireAuth><Profile/></RequireAuth>} />
           <Route path="/registerpage" element={<RegisterPage />} />
           <Route path="/" element={<LoginAuth><LoginPage /></LoginAuth>} />
 

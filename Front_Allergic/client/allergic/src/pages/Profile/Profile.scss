@@ -1,0 +1,101 @@
+@import "../../styles/responsive";
+
+.Profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+  
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+  
+    h1 {
+      text-align: center;
+    }
+  
+    &__main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: $breakH;
+      @include landscape {
+        flex-direction: row;
+      }
+      @include nonMobile {
+        flex-direction: column;
+      }
+    }
+  
+    &__spaceDiv {
+      width: 100%;
+      height: 80%;
+      padding: 1rem;
+      font-size: 15px;
+      border-radius: 1rem;
+      background: linear-gradient(
+        rgba(236, 236, 236, 0.9),
+        #AFAFAF
+      );
+      span {
+        margin-right: 16px;
+        color: #061f22;
+      }
+      p {
+        display: flex;
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: bold;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+    }
+  
+    &__buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+      @include landscape {
+        height: 60%;
+        padding-left: 20px;
+      }
+      @include nonMobile {
+        height: auto;
+        padding: 0;
+      }
+    }
+  
+    &__btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      width: 100%;
+      margin-top: 16px;
+      border: none;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: bold;
+      color: white;
+      background-color: #26C7DC;
+       }
+ }
+
+ p{
+    color: #061f22;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+
+ }
+  

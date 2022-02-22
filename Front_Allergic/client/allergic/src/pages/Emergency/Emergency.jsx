@@ -2,6 +2,8 @@ import { DILATE } from 'quagga';
 import React,{ useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import { API } from '../../shared/services/api';
+import "./Emergency.scss";
+
 
 
 const Emergency = () => {
